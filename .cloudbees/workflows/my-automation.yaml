@@ -14,7 +14,8 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo ${{ secrets.pcherry_secret_test_1 }} > file.txt
+          echo "This is my file" > file.txt
+          echo ${{ secrets.pcherry_secret_test_1 }} >> file.txt
+          echo "abcdefghijkl" >> file.txt
           echo "Show file contents"
           cat file.txt
-
